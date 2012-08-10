@@ -4,6 +4,7 @@ from django.db.models.signals import post_delete
 from django.core.files.storage import default_storage
 import mimetypes
 import os
+from fuzzywuzzy import fuzz
 
 mimetypes.init()
 
@@ -33,6 +34,28 @@ class Video(models.Model):
     def increment_view(self):
         self.view_count += 1
         self.save()
+
+    def get_related_videos(self, number=5):
+        videos = Video.objects.all()
+        result = []
+
+        # calculate fuzzy ratio based on video name
+        for video in videos:
+            if video.id == self.id:
+                continue
+
+            result.append({
+                "video": video,
+                "fuzz_value": fuzz.ratio(video.name, self.name)
+            })
+
+        # sort based on fuzz matching value
+        result.sort(key=lambda x: x["fuzz_value"], reverse=True)
+
+        # filtering threshold value above 30
+        result = filter(lambda x: x["fuzz_value"] > 30, result)
+
+        return [x["video"] for x in result][:number]
 
     def __unicode__(self):
         return "%s" % self.name

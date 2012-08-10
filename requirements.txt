@@ -4,3 +4,4 @@ django-debug-toolbar==0.9.4
 django-floppyforms==1.0
 django-grappelli==2.4.0
 wsgiref==0.1.2
+-e git://github.com/seatgeek/fuzzywuzzy.git@9c70844fa6669455f99aeb2668c48aac5d595f22#egg=fuzzywuzzy-dev
