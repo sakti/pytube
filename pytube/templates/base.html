@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pytube</title>
+        <link href="/static/video-js/video-js.min.css" rel="stylesheet">
+        <link href="/static/video-js/tube.css" rel="stylesheet">
+        <link href="/static/css/bootstrap.css" rel="stylesheet">
+        <script href="/static/js/jquery-1.7.1.min.js"></script>
+        <script href="/static/video-js/video.min.js"></script>
+        <script href="/static/js/bootstrap.js"></script>
+        <style>
+            .row{
+                margin-bottom:15px;
+            }
+            body{
+                margin-top:20px;
+            }
+            .container{
+                background:#261f18;
+                padding:20px;
+                border-radius:5px;
+                box-shadow:1px 2px 5px gray;
+            }
+            video{
+                background:#261f18 !important;
+            }
+            *{
+                color:#eee;
+            }
+            a {
+                color:#ccc;
+            }
+            a:hover{
+                color:white;
+                text-decoration:none;
+                font-weight:800;
+            }
+            #header a{
+                color:white;
+            }
+            #header{
+                border-bottom:1px solid gray;
+                padding-bottom:10px;
+            }
+            footer{
+                border-top:1px solid gray;
+                font-size:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="header" class="span12">
+                    <h1><a href="/">PyTube</a></h1>
+                </div>
+            </div>
+            {% block content %}
+            {% endblock content %}
+            <footer>
+                &copy; 2012
+            </footer>
+        </div>
+    </body>
+</html>

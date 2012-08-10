@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="span12">
+        <h2>Welcome to PyTube</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <h3>List videos</h3>
+        <ul class="unstyled">
+        {% for video in videos %}
+
+        <li>
+            <a href="view/{{ video.id }}">{{ video }} {{ video.created_time }} {{ video.view_count }} views</a>
+        </li>
+
+        {% empty %}
+
+        <li>There is no video</li>
+
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}

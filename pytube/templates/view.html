@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="span12">
+        <h2>{{ video }}</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span6">
+        <p>
+        <strong>Created time:</strong> {{ video.created_time }}
+        <br/>
+        <strong>Updated time:</strong> {{ video.last_updated_time }}
+        <br/>
+        <strong>Uploaded by:</strong> {{ video.user }}
+        </p>
+    </div>
+    <div class="span6">
+        <p><strong>Views:</strong> {{ video.view_count }}
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <video class="video-js tubecss" controls preload="auto" width="640" height="480" data-setup="{}">
+            <source src="/media/{{ video.raw }}" type="{{ video.get_mimetype }}">
+        </video>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        {{ video.desc|linebreaks }}
+    </div>
+</div>
+
+{% endblock content %}
