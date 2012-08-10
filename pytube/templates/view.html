@@ -24,7 +24,7 @@
 
 <div class="row">
     <div class="span12">
-        <video class="video-js tubecss" controls preload="auto" width="640" height="480" data-setup="{}">
+        <video id="viewer" class="video-js tubecss" controls preload="auto" width="640" height="480" data-setup="{}">
             <source src="/media/{{ video.raw }}" type="{{ video.get_mimetype }}">
         </video>
     </div>

@@ -5,9 +5,12 @@
         <link href="/static/video-js/video-js.min.css" rel="stylesheet">
         <link href="/static/video-js/tube.css" rel="stylesheet">
         <link href="/static/css/bootstrap.css" rel="stylesheet">
-        <script href="/static/js/jquery-1.7.1.min.js"></script>
-        <script href="/static/video-js/video.min.js"></script>
-        <script href="/static/js/bootstrap.js"></script>
+        <script src="/static/js/jquery-1.7.1.min.js"></script>
+        <script src="/static/video-js/video.min.js"></script>
+        <script src="/static/js/bootstrap.js"></script>
+        <script>
+            _V_.options.flash.swf = "/static/video-js/video-js.swf";
+        </script>
         <style>
             .row{
                 margin-bottom:15px;
@@ -20,6 +23,7 @@
                 padding:20px;
                 border-radius:5px;
                 box-shadow:1px 2px 5px gray;
+                margin-bottom:20px;
             }
             video{
                 background:#261f18 !important;
