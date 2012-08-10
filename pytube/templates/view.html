@@ -7,7 +7,18 @@
 </div>
 
 <div class="row">
-    <div class="span6">
+    <div class="span8">
+        <video id="viewer" class="video-js tubecss" controls preload="auto" width="620" height="480" data-setup="{}">
+            <source src="/media/{{ video.raw }}" type="{{ video.get_mimetype }}">
+        </video>
+    </div>
+    <div class="span4">
+        <h4>Related Videos</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span4">
         <p>
         <strong>Created time:</strong> {{ video.created_time }}
         <br/>
@@ -16,17 +27,9 @@
         <strong>Uploaded by:</strong> {{ video.user }}
         </p>
     </div>
-    <div class="span6">
-        <p><strong>Views:</strong> {{ video.view_count }}
+    <div class="span4 counter_wrap">
+        <p><span class="counter">{{ video.view_count }}</span> views
         </p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="span12">
-        <video id="viewer" class="video-js tubecss" controls preload="auto" width="640" height="480" data-setup="{}">
-            <source src="/media/{{ video.raw }}" type="{{ video.get_mimetype }}">
-        </video>
     </div>
 </div>
 
