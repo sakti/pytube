@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from django.contrib.auth.views import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -34,9 +35,16 @@ def upload(request):
 def view(request, video_id):
     "view video"
     video = get_object_or_404(Video, id=video_id)
-    video.increment_view()
     return render(request, "view.html",
             {"video": video})
+
+
+def increment_view(request, video_id):
+    "increment video view"
+    if request.POST:
+        video = get_object_or_404(Video, id=video_id)
+        video.increment_view()
+    return HttpResponse("ok")
 
 
 def login_user(request, *args, **kwargs):

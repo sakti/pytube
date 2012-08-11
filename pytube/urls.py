@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'pytube.views.home', name='home'),
     url(r'^view/(?P<video_id>\d+)$', 'pytube.views.view', name='view'),
+    url(r'^inc/(?P<video_id>\d+)$', 'pytube.views.increment_view',
+        name='increment_view'),
     url(r'^login$', 'pytube.views.login_user',
         {'template_name': 'login.html'}, name='login'),
     url(r'^logout$', 'django.contrib.auth.views.logout',
