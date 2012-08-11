@@ -9,12 +9,13 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'pytube.views.home', name='home'),
     url(r'^view/(?P<video_id>\d+)$', 'pytube.views.view', name='view'),
-    # url(r'^pytube/', include('pytube.foo.urls')),
+    url(r'^login$', 'pytube.views.login_user',
+        {'template_name': 'login.html'}, name='login'),
+    url(r'^logout$', 'django.contrib.auth.views.logout',
+        {'next_page': '/'}, name='logout'),
+    url(r'^register$', 'pytube.views.register_user', name='register'),
+    url(r'^upload$', 'pytube.views.upload', name='upload'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
 

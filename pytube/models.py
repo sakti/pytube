@@ -13,7 +13,8 @@ class Video(models.Model):
     name = models.CharField(max_length=200,
             help_text="Video name",
             db_index=True)
-    raw = models.FileField(upload_to="raw")
+    raw = models.FileField("Video", upload_to="raw",
+            help_text="Accepted file types: mp4, ogv and webm")
     video = models.FileField(upload_to="video",
             editable=False)
     desc = models.TextField()

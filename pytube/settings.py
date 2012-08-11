@@ -114,6 +114,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'debug_toolbar',
+    'crispy_forms',
 
     'pytube',
 )
@@ -150,3 +151,6 @@ LOGGING = {
 # debug toolbar settings
 INTERNAL_IPS = ('127.0.0.1',)
 DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login'
