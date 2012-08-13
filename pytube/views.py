@@ -32,6 +32,7 @@ def upload(request):
                 {"form": form})
 
 
+@login_required
 def view(request, video_id):
     "view video"
     video = get_object_or_404(Video, id=video_id)
@@ -39,6 +40,7 @@ def view(request, video_id):
             {"video": video})
 
 
+@login_required
 def increment_view(request, video_id):
     "increment video view"
     if request.POST:
