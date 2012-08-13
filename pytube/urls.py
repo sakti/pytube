@@ -19,11 +19,15 @@ urlpatterns = patterns('',
     url(r'^upload$', 'pytube.views.upload', name='upload'),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^grappelli/', include('grappelli.urls')),
 )
 
 if settings.DEBUG:
     urlpatterns += patterns('',
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
                 'document_root': settings.MEDIA_ROOT,
+            }),
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+                'document_root': settings.STATICFILES_DIRS[0],
             }),
     )

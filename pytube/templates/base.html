@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>pytube</title>
-        <link href="/static/video-js/video-js.min.css" rel="stylesheet">
-        <link href="/static/video-js/tube.css" rel="stylesheet">
-        <link href="/static/css/bootstrap.css" rel="stylesheet">
-        <script src="/static/js/jquery-1.7.1.min.js"></script>
-        <script src="/static/video-js/video.min.js"></script>
-        <script src="/static/js/bootstrap.js"></script>
+        <link href="{{ STATIC_URL}}video-js/video-js.min.css" rel="stylesheet">
+        <link href="{{ STATIC_URL}}video-js/tube.css" rel="stylesheet">
+        <link href="{{ STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+        <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+        <script src="{{ STATIC_URL }}video-js/video.min.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
         <script>
-            _V_.options.flash.swf = "/static/video-js/video-js.swf";
+            _V_.options.flash.swf = "{{ STATIC_URL }}video-js/video-js.swf";
         </script>
         {% block extra_head %}
         {% endblock extra_head %}

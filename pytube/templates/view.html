@@ -26,7 +26,7 @@ $(function(){
             {% csrf_token %}
         </form>
         <video id="viewer" class="video-js tubecss" controls preload="auto" width="620" height="480" data-setup="{}">
-            <source src="/media/{{ video.raw }}" type="{{ video.get_mimetype }}">
+            <source src="{{ MEDIA_URL }}{{ video.raw }}" type="{{ video.get_mimetype }}">
         </video>
     </div>
     <div class="span4">
