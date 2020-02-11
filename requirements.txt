@@ -1,4 +1,4 @@
-Django==1.4.1
+Django==1.11.28
 django-crispy-forms==1.1.4
 django-debug-toolbar==0.9.4
 django-floppyforms==1.0
